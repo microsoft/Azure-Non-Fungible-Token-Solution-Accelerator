@@ -48,8 +48,8 @@ After deployment, you will have an Azure Container Registry, Azure Kubernetes Se
 
 Resources can also be deployed into your Azure Subscription by using one of these Deploy Azure links:  
 
-[![Deploy to Azure](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.svg?sanitize=true)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmicrosoft%2FAzure-Non-Fungible-Token-Solution-Accelerator%2Fmain%2Fdeployment%2FARMTemplates%2FJson%2Fmain.json%3Ftoken%3DGHSAT0AAAAAABQI5RG53U5MBMDUATONORFKYP4RRHA)&emsp;&emsp;&emsp;
-[![Deploy To Azure US Gov](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazuregov.svg?sanitize=true)](https://portal.azure.us/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmicrosoft%2FAzure-Non-Fungible-Token-Solution-Accelerator%2Fmain%2Fdeployment%2FARMTemplates%2FJson%2Fmain.json%3Ftoken%3DGHSAT0AAAAAABQI5RG53U5MBMDUATONORFKYP4RRHA)&emsp;&emsp;&emsp;
+[![Deploy to Azure](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.svg?sanitize=true)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmicrosoft%2FAzure-Non-Fungible-Token-Solution-Accelerator%2Fmain%2Fdeployment%2FARMTemplates%2FJson%2Fmain.json)&emsp;&emsp;&emsp;
+[![Deploy To Azure US Gov](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazuregov.svg?sanitize=true)](https://portal.azure.us/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmicrosoft%2FAzure-Non-Fungible-Token-Solution-Accelerator%2Fmain%2Fdeployment%2FARMTemplates%2FJson%2Fmain.json)&emsp;&emsp;&emsp;
 
 **Note: Follow "Step 3" in [Azure Resources Deployment](./deployment/ARMTemplates/ResourceDeployment.md#step-3-configure-managed-identity) to configure managed identity permission if you have deployed resources using above Azure links.**
  

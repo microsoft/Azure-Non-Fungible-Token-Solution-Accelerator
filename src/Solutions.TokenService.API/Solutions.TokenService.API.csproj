@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>91d5c17c-8020-4aeb-8dfc-0b099b63f39a</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.8" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.3.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Newtonsoft" Version="5.3.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="5.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Solutions.Security.Cosmos\Solutions.Security.Cosmos.csproj" />
+    <ProjectReference Include="..\Solutions.TokenService.BlockchainNetworkManager\Solutions.TokenService.BlockchainNetworkManager.csproj" />
+    <ProjectReference Include="..\Solutions.TokenService.LedgerClient\Solutions.TokenService.LedgerClient.csproj" />
+    <ProjectReference Include="..\Solutions.TokenService.PartyManager\Solutions.TokenService.PartyManager.csproj" />
+    <ProjectReference Include="..\Solutions.TokenService.TransactionIndexer\Solutions.TokenService.TransactionIndexer.csproj" />
+    <ProjectReference Include="..\Solutions.TokenService.UserManager\Solutions.TokenService.UserManager.csproj" />
+  </ItemGroup>
+
+
+</Project>

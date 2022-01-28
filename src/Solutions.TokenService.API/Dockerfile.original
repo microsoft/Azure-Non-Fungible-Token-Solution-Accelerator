@@ -1,0 +1,25 @@
+#See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
+
+FROM mcr.microsoft.com/dotnet/aspnet:5.0 AS base
+WORKDIR /app
+EXPOSE 80
+EXPOSE 443
+
+FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
+WORKDIR /src
+COPY ["Microsoft.TokenService.API/Microsoft.TokenService.API.csproj", "Microsoft.TokenService.API/"]
+COPY ["Microsoft.TokenService.LedgerClient/Microsoft.TokenService.LedgerClient.csproj", "Microsoft.TokenService.LedgerClient/"]
+COPY ["Microsoft.TokenService.KeyManagement/Microsoft.TokenService.KeyManagement.csproj", "Microsoft.TokenService.KeyManagement/"]
+COPY ["Microsoft.TokenService.UserManager/Microsoft.TokenService.UserManager.csproj", "Microsoft.TokenService.UserManager/"]
+RUN dotnet restore "Microsoft.TokenService.API/Microsoft.TokenService.API.csproj"
+COPY . .
+WORKDIR "/src/Microsoft.TokenService.API"
+RUN dotnet build "Microsoft.TokenService.API.csproj" -c Release -o /app/build
+
+FROM build AS publish
+RUN dotnet publish "Microsoft.TokenService.API.csproj" -c Release -o /app/publish
+
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "Microsoft.TokenService.API.dll"]

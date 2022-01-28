@@ -1,0 +1,21 @@
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft": "Warning",
+      "Microsoft.Hosting.Lifetime": "Information"
+    }
+  },
+  "AllowedHosts": "*",
+  "App": {
+    "Offchain_Connectionstring": "{Offchain_Connectionstring}",
+    "ManagementCollection": "Management",
+    "TokenTransactionCollection": "TokenTransactions"
+  },
+  "KeyVault": {
+    "ClientID": "{ClientID}",
+    "ClientSecret": "{ClientSecret}",
+    "TenantID": "{TenantID}",
+    "KeyVaultUrl": "{KeyVaultUrl}"
+  }
+}

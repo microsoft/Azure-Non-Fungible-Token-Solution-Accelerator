@@ -1,0 +1,35 @@
+﻿# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: tokenservice-deployment
+spec:
+ replicas: 1
+ selector:
+  matchLabels:
+   app: acrtokenservice
+ template:
+  metadata:
+   labels:
+    app: acrtokenservice
+  spec:
+    containers:
+    - name: acrtokenservice
+      image: {acrName}.azurecr.io/tokenservicehub/acrtokenservice
+      ports:
+      - containerPort: 80
+      imagePullPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+    name: tokenservice-service
+spec:
+    type: LoadBalancer
+    ports:
+        - port: 80
+          name: http
+    selector:
+        app: acrtokenservice

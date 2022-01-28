@@ -1,0 +1,607 @@
+{
+	"info": {
+		"_postman_id": "bbba5fc4-182c-4021-a5d2-405778dbf662",
+		"name": "ProjectOptionB",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetAllParties",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{serviceendpoint}}/ServiceManagement/Parties/",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{serviceendpoint}}"
+					],
+					"path": [
+						"ServiceManagement",
+						"Parties",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateParty",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"partyName\": \"msft\",\r\n  \"description\": \"msft test party\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{protocol}}://{{serviceendpoint}}:{{port}}/ServiceManagement/Parties/Party",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{serviceendpoint}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"ServiceManagement",
+						"Parties",
+						"Party"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetParty",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{serviceendpoint}}:{{port}}/ServiceManagement/Parties/Party/{{PartyId}}",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{serviceendpoint}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"ServiceManagement",
+						"Parties",
+						"Party",
+						"{{PartyId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteParty",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{serviceendpoint}}:{{port}}/ServiceManagement/Parties/Party/{{PartyId}}",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{serviceendpoint}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"ServiceManagement",
+						"Parties",
+						"Party",
+						"{{PartyId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RegisterBlockchainNetwork",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"{{blcockahinName}}\",\r\n  \"nodeURL\": \"{{blockchainNode}}\",\r\n  \"description\": \"{{blockchainDescription}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{protocol}}://{{serviceendpoint}}:{{port}}/ServiceManagement/BlockchainNetworks/BlockchainNetwork",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{serviceendpoint}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"ServiceManagement",
+						"BlockchainNetworks",
+						"BlockchainNetwork"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllBlockchainNetworks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{serviceendpoint}}:{{port}}/ServiceManagement/BlockchainNetworks/",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{serviceendpoint}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"ServiceManagement",
+						"BlockchainNetworks",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetBlockchainNetwork",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{serviceendpoint}}:{{port}}/ServiceManagement/BlockchainNetworks/BlockchainNetwork/{{blockchainId}}",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{serviceendpoint}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"ServiceManagement",
+						"BlockchainNetworks",
+						"BlockchainNetwork",
+						"{{blockchainId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteBlockchainNetwork",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{serviceendpoint}}:{{port}}/ServiceManagement/BlockchainNetworks/BlockchainNetwork/{{blockchainId}}",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{serviceendpoint}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"ServiceManagement",
+						"BlockchainNetworks",
+						"BlockchainNetwork",
+						"{{blockchainId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllUsers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{serviceendpoint}}:{{port}}/ServiceManagement/Users",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{serviceendpoint}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"ServiceManagement",
+						"Users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Shipper B\",\r\n  \"description\": \"Shipper B User\",\r\n  \"partyID\": \"{{PartyId}}\",\r\n  \"blockchainNetworkID\": \"{{blockchainId}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{protocol}}://{{serviceendpoint}}:{{port}}/ServiceManagement/Users/User",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{serviceendpoint}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"ServiceManagement",
+						"Users",
+						"User"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{serviceendpoint}}:{{port}}/ServiceManagement/Users/User/{{UserId}}",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{serviceendpoint}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"ServiceManagement",
+						"Users",
+						"User",
+						"{{UserId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetUserByPublicAddress",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteUser",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{serviceendpoint}}:{{port}}/ServiceManagement/Users/User/{{UserId}}",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{serviceendpoint}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"ServiceManagement",
+						"Users",
+						"User",
+						"{{UserId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeployTokenContract",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{serviceendpoint}}:{{port}}/nFmbtgToken/DeployNewToken?TokenOwner={{callerID}}&TokenName={{$randomWords}}Token&TokenSymbol={{$randomWord}}",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{serviceendpoint}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"nFmbtgToken",
+						"DeployNewToken"
+					],
+					"query": [
+						{
+							"key": "TokenOwner",
+							"value": "{{callerID}}"
+						},
+						{
+							"key": "TokenName",
+							"value": "{{$randomWords}}Token"
+						},
+						{
+							"key": "TokenSymbol",
+							"value": "{{$randomWord}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetName",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{serviceendpoint}}:{{port}}/nFmbtgToken/Name?CallerId={{callerID}}&ContractAddress={{tokenID}}",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{serviceendpoint}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"nFmbtgToken",
+						"Name"
+					],
+					"query": [
+						{
+							"key": "CallerId",
+							"value": "{{callerID}}"
+						},
+						{
+							"key": "ContractAddress",
+							"value": "{{tokenID}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetSymbol",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{serviceendpoint}}:{{port}}/nFmbtgToken/Symbol?CallerId={{callerID}}&ContractAddress={{tokenID}}",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{serviceendpoint}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"nFmbtgToken",
+						"Symbol"
+					],
+					"query": [
+						{
+							"key": "CallerId",
+							"value": "{{callerID}}"
+						},
+						{
+							"key": "ContractAddress",
+							"value": "{{tokenID}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MintToken",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{serviceendpoint}}:{{port}}/nFmbtgToken/MintToken?TokenMinterId={{callerID}}&TokenMinteeId={{USER_A}}&TokenId={{$randomInt}}&TokenURI=this is sample value for this token&ContractAddress={{tokenID}}",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{serviceendpoint}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"nFmbtgToken",
+						"MintToken"
+					],
+					"query": [
+						{
+							"key": "TokenMinterId",
+							"value": "{{callerID}}"
+						},
+						{
+							"key": "TokenMinteeId",
+							"value": "{{USER_A}}"
+						},
+						{
+							"key": "TokenId",
+							"value": "{{$randomInt}}"
+						},
+						{
+							"key": "TokenURI",
+							"value": "this is sample value for this token"
+						},
+						{
+							"key": "ContractAddress",
+							"value": "{{tokenID}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OwnerOf",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{serviceendpoint}}:{{port}}/nFmbtgToken/OwnerOf?CallerId={{callerID}}&TokenId=671&ContractAddress={{tokenID}}",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{serviceendpoint}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"nFmbtgToken",
+						"OwnerOf"
+					],
+					"query": [
+						{
+							"key": "CallerId",
+							"value": "{{callerID}}"
+						},
+						{
+							"key": "TokenId",
+							"value": "671"
+						},
+						{
+							"key": "ContractAddress",
+							"value": "{{tokenID}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TokenURI",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{serviceendpoint}}:{{port}}/nFmbtgToken/TokenURI?CallerId={{USER_A}}&TokenId=671&ContractAddress={{tokenID}}",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{serviceendpoint}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"nFmbtgToken",
+						"TokenURI"
+					],
+					"query": [
+						{
+							"key": "CallerId",
+							"value": "{{USER_A}}"
+						},
+						{
+							"key": "TokenId",
+							"value": "671"
+						},
+						{
+							"key": "ContractAddress",
+							"value": "{{tokenID}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transfer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{serviceendpoint}}:{{port}}/nFmbtgToken/Transfer?SenderId={{USER_A}}&RecipientId={{USER_B}}&TokenId=671&ContractAddress={{tokenID}}",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{serviceendpoint}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"nFmbtgToken",
+						"Transfer"
+					],
+					"query": [
+						{
+							"key": "SenderId",
+							"value": "{{USER_A}}"
+						},
+						{
+							"key": "RecipientId",
+							"value": "{{USER_B}}"
+						},
+						{
+							"key": "TokenId",
+							"value": "671"
+						},
+						{
+							"key": "ContractAddress",
+							"value": "{{tokenID}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BalanceOf",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{serviceendpoint}}:{{port}}/nFmbtgToken/BalanceOf?CallerId={{USER_B}}&ContractAddress={{tokenID}}",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{serviceendpoint}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"nFmbtgToken",
+						"BalanceOf"
+					],
+					"query": [
+						{
+							"key": "CallerId",
+							"value": "{{USER_B}}"
+						},
+						{
+							"key": "ContractAddress",
+							"value": "{{tokenID}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BurnToken",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{serviceendpoint}}:{{port}}/nFmbtgToken/Burn?CallerId={{USER_B}}&TokenId=671&ContractAddress={{tokenID}}",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{serviceendpoint}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"nFmbtgToken",
+						"Burn"
+					],
+					"query": [
+						{
+							"key": "CallerId",
+							"value": "{{USER_B}}"
+						},
+						{
+							"key": "TokenId",
+							"value": "671"
+						},
+						{
+							"key": "ContractAddress",
+							"value": "{{tokenID}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

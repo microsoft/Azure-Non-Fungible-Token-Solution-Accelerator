@@ -55,7 +55,7 @@ Resources can also be deployed into your Azure Subscription by using one of thes
 [![Deploy to Azure](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.svg?sanitize=true)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmicrosoft%2FAzure-Non-Fungible-Token-Solution-Accelerator%2Fmain%2Fdeployment%2FARMTemplates%2FJson%2Fmain.json)&emsp;&emsp;&emsp;
 [![Deploy To Azure US Gov](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazuregov.svg?sanitize=true)](https://portal.azure.us/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmicrosoft%2FAzure-Non-Fungible-Token-Solution-Accelerator%2Fmain%2Fdeployment%2FARMTemplates%2FJson%2Fmain.json)&emsp;&emsp;&emsp;
 
-**Note: Follow "Step 3" in [Azure Resources Deployment](./deployment/ARMTemplates/ResourceDeployment.md#step-3-configure-managed-identity) to configure managed identity permission if you have deployed resources using above Azure links.**
+**Note: Follow "Step 3" in [Resources Deployment](./deployment/ARMTemplates/ResourceDeployment.md#step-3-configure-managed-identity) to configure managed identity permission if you have deployed resources using above Azure links.**
  
 ### [02. Quorum Configuration](./deployment/ARMTemplates/QuorumConfiguration.md):
 After the resource deployment step, you will need to configure the Quorum Service. Follow the steps given in the [quorum configuration guide](./deployment/ARMTemplates/QuorumConfiguration.md) to configure and deploy the quorum service.
@@ -69,6 +69,8 @@ This reposity contains a [sample console app](./documents/NFTSampleConsoleApp.md
 
 
 ## Folders
+
+Refer to the following folders to learn about the solution components specific to **Azure Non-Fungible Token Solution Accelerator**. 
 
 - [deployment](./deployment): Contains resource deployment scripts to deploy the resources required for Quorum and Token Service. 
 - [documents](./documents): Contains API and Sample Application Descriptions  
@@ -116,7 +118,7 @@ THE SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED
 
 When you deploy this template, Microsoft is able to identify the installation of the software with the Azure resources that are deployed. Microsoft is able to correlate the Azure resources that are used to support the software. Microsoft collects this information to provide the best experiences with their products and to operate their business. The data is collected and governed by Microsoft's privacy policies, which can be found at [Microsoft Privacy Statement](https://go.microsoft.com/fwlink/?LinkID=824704).
 
-To disable this, simply remove the following section from [main.json](/deployments/ARMTemplates/Json/main.json) before deploying the resources to Azure:
+To disable this, simply remove the following section from [main.json](/deployment/ARMTemplates/Json/main.json) before deploying the resources to Azure:
 
 ```json
 {

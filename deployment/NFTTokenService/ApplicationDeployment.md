@@ -11,45 +11,40 @@ In order to successfully deploy the token service, you will need to have deploye
 
 If these are not available, please follow the [resource deployment](../ARMTemplates/ResourceDeployment.md) steps. 
 
-## Deploy Token Service on AKS
+## Deploy Token Service on Azure Kubernetes Service
 
-### Step 1. Update the Kubernetes manifest file (optional)
-1. Navigate to the .\maifests
-2. Change the kubernetes-deployment.yaml.template to define as per requirement
-3. Look here for more information on [Kubernetes POD file development](https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/)
-4. Make sure placeholders in [appsettings.json](../../src/Solutions.TokenService.API) for Token Service is replaced with required values. 
- 
-### Step 2. Execute the PowerShell deployment script
+### Execute the PowerShell deployment script
 1. Run [PowerShell 7.1](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell?view=powershell-7.1)
 2. Run Change Directory command to Navigate to the Path where deployapplications.ps1 is present
     ```console
-    PS C:\Users\>CD <driectory path>
+    PS C:\Users\>cd <driectory path>
     ```
-3. Provide the following detail in deployapplications.ps1 from previous script(resourcedeployment.ps1) output
+3. Run the .\deployapplications.ps1
+    ```console
+    Powershell.exe -executionpolicy remotesigned -File .\deployapplications.ps1
+    ```
+4. Accept the log-in request through your browser
+
+5. Enter the following detail in console when prompted which are obtained from previous script(resourcedeployment.ps1) output
     ```
     SubscriptionId : The Subscription ID for where you want to manage your resources
     ResourcegroupName : Resource group name where the resources are deployed
     ContainerRegistryName :  Container registry name where the docker image will be uploaded
     kubernetesName : Kubernetes cluster name
     ```
-4. Run the .\deployapplications.ps1
-    ```console
-    PS C:\Users\microsoft>Powershell.exe -executionpolicy remotesigned -File .\deployapplications.ps1
-    ```
-5. Accept the log-in request through your browser
 
 6. After the successful execution of script, the Token service will be deployed.
 
-    **Note: This script would also update appsettings.json for the sample console service with values required to communicate with this service.**
+    **Note: This script will also update appsettings.json for the sample console service with values required to communicate with this service.**
 
     **You've successfully deployed the Token service!**
 
 
-For next steps, please go to [**Solution Testing**](/documents/NFTSampleConsoleApp.md).
+Next, please go to [**Solution Testing**](/documents/NFTSampleConsoleApp.md).
 
 ---
 
-## Detail of the deployment script
+## Description of the deployment script (Optional)
 1. Log in to the Azure portal
 
     ```
@@ -95,7 +90,7 @@ For next steps, please go to [**Solution Testing**](/documents/NFTSampleConsoleA
 
     Set-Location ..
     ```
-7. Set up AKS and Deploy Applications from Azure Container Registry
+7. Set up Azure Kubernetes Service and Deploy Applications from Azure Container Registry
 
     ```
     az aks get-credentials -g myresourceGroupName -n mykubernetesName

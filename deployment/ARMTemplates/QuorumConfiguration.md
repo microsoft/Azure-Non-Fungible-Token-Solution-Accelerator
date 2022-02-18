@@ -35,4 +35,4 @@
 
 **You've successfully deployed the GoQorum service!**
 
-For next step, go to [Token Service Deployment](/deployment/NFTTokenService/ApplicationDeployment.md).
+Next, go to [Token Service Deployment](/deployment/NFTTokenService/ApplicationDeployment.md).

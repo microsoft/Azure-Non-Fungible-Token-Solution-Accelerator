@@ -23,7 +23,7 @@ You may skip this section if you prefer to provision your Azure resources via th
  2. [PowerShell 7.1](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell?view=powershell-7.1) - Required to run deployment scripts
  3. [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli) installed - Required to run deployment scripts
  4. [User Access Administrator](https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#user-access-administrator) Role - Assigned to the user in Azure Subscription
- 5. [PuTTy](https://www.putty.org/) - Required for ssh into VM
+ 5. [PuTTy](https://www.putty.org/) - Required for ssh connection into VM
 
 Execute the following steps to deploy Azure resources:
 
@@ -35,9 +35,13 @@ Check here for more information on [cloning a repository](https://docs.github.co
 ### Step 2. Deploy Blockchain Service and NFT Service Resources
 1. Run [PowerShell 7.1](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell?view=powershell-7.1)
 
-2. Run Change Directory command to Navigate to the Path where resourcedeployment.ps1 is present
+     **This script will also update appsettings.json with values required to communicate with your resources.**
+
+    **Remember to write down all of the output values printed on the screen. These are required in the next step (deploying the token service).**
+
+2. Run Change Directory command to Navigate to the Path using the resourcedeployment.ps1 location **deployment/ARMTemplates/Bicep/**
     ```console
-    PS C:\Users\>CD <directory path>
+    PS C:\Users\>cd <directory path>
     ```
 
 3. Run the **resourcedeployment.ps1** with the following parameters:
@@ -64,11 +68,13 @@ Check here for more information on [cloning a repository](https://docs.github.co
 
         ![alt text](/documents/media/Resources.png)
 
+
+
 ### Step 3. Configure Managed Identity 
 
 **Note: The managed identity name will differ by deployment. Your managed identity will be different. Ex. NFTUserIdentity-XXXXX**
 
-#### Assign Managed Identity to AKS
+#### Assign Managed Identity to Azure Kubernetes Service
 1. Step into the aks VM scale set
 
     ![alt text](/documents/media/aksVmScaleSet.png) 
@@ -115,11 +121,11 @@ Check here for more information on [cloning a repository](https://docs.github.co
 
     ![alt text](/documents/media/KeyVault.png) 
 
-2. Under settings click on the Access policies and click on add access policy
+2. Under settings click on the Access policies and click on the add access policy
 
-    ![alt text](/documents/media/KeyVaultAccess.png)
+    ![alt text](/documents/media/KeyVaultAccessPolicy.png)
 
-3. Select Key Management in the template. Select the Get, Update, Create, Delete, Verifya, and Sign in the key permissions
+3. Select Key Management in the template. Select the Get, Update, Create, Delete, Verify, and Sign in the key permissions
 
     ![alt text](/documents/media/KeyVaultPermissions.png)
 
@@ -164,10 +170,7 @@ Check here for more information on [cloning a repository](https://docs.github.co
  
     ![alt text](/documents/media/CosmosDbIdVerify.png)
 
-**This script will also update appsettings.json with values required to communicate with these resources.**
-
-**Remember to write down all of the output values printed on the screen. These are required in the next step (while deploying Token service).**
 
 **You've successfully deployed all the resources!**
 
-For next step, go to [Quorum Configuration](/deployment/ARMTemplates/QuorumConfiguration.md).
+Next, go to [Quorum Configuration](/deployment/ARMTemplates/QuorumConfiguration.md).

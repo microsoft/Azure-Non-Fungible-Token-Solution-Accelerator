@@ -3,15 +3,11 @@ page_type: sample
 languages:
 - csharp
 products:
-- azure-blockchain-service
-- azure-blockchain-tokens
 - azure-cosmos-db
 ---
-
 ![NFT Token SA Banner](./documents/media/SABanner.png)
 # Azure NFT (Non-fungible Token) Solution Accelerator
 
-## About This Repository
 Welcome to the world of decentralized applications!  
 
 This repo is for a Azure Non-fungible Token Solution Accelerator that leverages the [ERC 721 Token Standard](https://ethereum.org/en/developers/docs/standards/tokens/erc-721/) to help manage transactions on [Enterprise Blockchain Services](https://ethereum.org/en/enterprise/private-ethereum/) like [Ethereum](https://ethereum.org/en/enterprise/), [Quorum](https://consensys.net/quorum/) and [Hyperledger Besu](https://www.hyperledger.org/use/besu)  

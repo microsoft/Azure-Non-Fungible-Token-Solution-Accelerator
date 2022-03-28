@@ -70,7 +70,7 @@ namespace Microsoft.TokenService.Management.Tests
         {
             Microsoft.TokenService.BlockchainNetworkManager.BlockchainNetworks blockchainNetwork =
               new BlockchainNetworkManager.BlockchainNetworks(_cosmosConnection, "Management");
-            _blockchainNetwork = await blockchainNetwork.RegisterBlockchainNetwork("Foo network", "http://foo", "blabla");
+            _blockchainNetwork = await blockchainNetwork.RegisterBlockchainNetwork("Foo network", "http://foo", ChainId.Private, "blabla");
 
             Console.WriteLine($"BlockhChainNetwork has been created. \nBlockchainNetworkID : {_blockchainNetwork.Id} \nBlockchainNetworkName : {_blockchainNetwork.Name}");
 

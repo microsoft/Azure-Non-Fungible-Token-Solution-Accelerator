@@ -22,13 +22,14 @@ namespace Microsoft.TokenService.BlockchainNetworkManager
         {
         }
 
-        public async Task<BlockchainNetwork> RegisterBlockchainNetwork(string BlockchainNetworkName, string TransactionNodeURL, string Description)
+        public async Task<BlockchainNetwork> RegisterBlockchainNetwork(string BlockchainNetworkName, string TransactionNodeURL, ChainId ChainId, string Description)
         {
             var blockchainNetwork = new BlockchainNetwork()
             {
                 Name = BlockchainNetworkName,
                 BlockchainNode = TransactionNodeURL,
                 BlockchainPlatformName = "Quorum",
+                ChainId = ChainId,
                 BlockchainPlatformType = "Ethereum",
                 Description = Description
             };

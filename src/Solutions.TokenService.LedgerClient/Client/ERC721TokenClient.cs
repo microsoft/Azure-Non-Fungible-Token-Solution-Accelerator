@@ -43,7 +43,8 @@ namespace Microsoft.TokenService.LedgerClient.Client
         {
             var user = await users.GetUser(Guid.Parse(UserID));
             return await GetWeb3(user.Id.ToString(),
-                                        user.BlockchainNetwork.BlockchainNode);
+                                        user.BlockchainNetwork.BlockchainNode,
+                                        (int)user.BlockchainNetwork.ChainId);
         }
 
         private async Task<ERC721Token.ERC721Token> getTokenService(string ContractAddress, string UserID)

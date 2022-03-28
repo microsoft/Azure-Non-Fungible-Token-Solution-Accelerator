@@ -94,10 +94,10 @@ namespace Microsoft.TokenService.KeyManagement
             return new EthECKey(publicKey, false).GetPublicAddress();
         }
 
-        public async Task<IAccount> SetUpExternalAccountFromKeyVaultByKey(string keyIdentifier)
+        public async Task<IAccount> SetUpExternalAccountFromKeyVaultByKey(string keyIdentifier, int ChainId)
         {
             var signer = new AzureKeyVaultExternalSigner(kvClient, keyIdentifier, clientSecretCredential);
-            var externalAccount = new ExternalAccount(signer, (int)Nethereum.Signer.Chain.Private);
+            var externalAccount = new ExternalAccount(signer, ChainId);
             await externalAccount.InitialiseAsync();
             return externalAccount;
         }

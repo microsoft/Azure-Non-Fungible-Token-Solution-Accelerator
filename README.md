@@ -15,7 +15,6 @@ This repo is for a Azure Non-fungible Token Solution Accelerator that leverages 
 It supports all ERC 721 Token transactions and provides several features to assist in managing Blockchain Networks, Consortium Parties, as well as private key transactions.
 
 ## Features
-
 With this Azure Non-fungible Token Solution Accelerator, you can take advantage of:  
    * HTTP REST APIs for ERC 721 Token Functions [(ERC 721 Token API)](./documents/ERC721TokenAPI.md)  
     - ERC 721 Token Smart Contract Deployment  
@@ -31,6 +30,8 @@ With this Azure Non-fungible Token Solution Accelerator, you can take advantage 
    
    * Logging every Token Transactions  
     - Indexing every Token Transactions in Cosmos DB
+    
+Support QBS(Quorum Blockchain Service) - ChainId is 10 (previously ABS had)  
 
 ## Prerequisites
 

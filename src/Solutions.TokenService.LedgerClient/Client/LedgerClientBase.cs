@@ -17,10 +17,10 @@ namespace Microsoft.TokenService.LedgerClient.Client
 
         protected LedgerClientBase(AzureKeyVaultKeyClient akvClient) => kvClient = akvClient;
         
-        protected async Task<Web3> GetWeb3(string KeyIdentifier, string RPCEndpoint)
+        protected async Task<Web3> GetWeb3(string KeyIdentifier, string RPCEndpoint, int ChainId)
         {
             //prepare user's private key
-            var _account = await kvClient.SetUpExternalAccountFromKeyVaultByKey(KeyIdentifier);
+            var _account = await kvClient.SetUpExternalAccountFromKeyVaultByKey(KeyIdentifier, ChainId);
             var rpcClient = new RpcClient(baseUrl: new Uri(RPCEndpoint));
             ((ExternalAccount)_account).InitialiseDefaultTransactionManager(rpcClient);
             var web3 = new Web3(account: _account, client: rpcClient);

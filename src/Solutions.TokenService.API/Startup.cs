@@ -16,6 +16,7 @@ using Microsoft.TokenService.LedgerClient.Client;
 using Microsoft.TokenService.PartyManager;
 using Microsoft.TokenService.UserManager;
 using AutoMapper;
+using Newtonsoft.Json.Converters;
 
 namespace Microsoft.TokenService.API
 {
@@ -32,8 +33,11 @@ namespace Microsoft.TokenService.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers()
-                    .AddNewtonsoftJson();
-            
+                 .AddNewtonsoftJson(jsonOptions =>
+                 {
+                     jsonOptions.SerializerSettings.Converters.Add(new StringEnumConverter());
+                 });
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Microsoft Token Service API Endpoint", Version = "v1.0.0" });

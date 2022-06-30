@@ -65,6 +65,7 @@ namespace Microsoft.Solutions.NFT.ConsoleApp
             {
                 Name = "Test Blockchain Network",
                 Description = "This is Sample Application",
+                ChainId = ChainId.QBSorABS,
                 NodeURL = _config["App:BlockchainTxEndpointURL"]
             });
 

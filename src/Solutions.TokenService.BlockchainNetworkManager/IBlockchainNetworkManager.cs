@@ -13,7 +13,7 @@ namespace Microsoft.TokenService.BlockchainNetworkManager
         Task<BlockchainNetwork> GetBlockchainNetwork(Guid Id);
         Task<BlockchainNetwork> GetBlockchainNetwork(string blockchainName);
         Task<IEnumerable<BlockchainNetwork>> GetAllBlockchainNetworks();
-        Task<BlockchainNetwork> RegisterBlockchainNetwork(string BlockchainNetworkName, string TransactionNodeURL, string Description);
+        Task<BlockchainNetwork> RegisterBlockchainNetwork(string BlockchainNetworkName, string TransactionNodeURL, ChainId ChainId, string Description);
         Task UnRegisterBlockchainNetwork(Guid Id);
     }
 }

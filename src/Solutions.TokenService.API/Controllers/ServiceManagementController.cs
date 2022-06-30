@@ -53,6 +53,7 @@ namespace Microsoft.TokenService.API.Controllers
 
             return await blockchainNetworkManager.RegisterBlockchainNetwork(BlockchainNetworkInfo.Name,
                                                                             BlockchainNetworkInfo.NodeURL,
+                                                                            BlockchainNetworkInfo.ChainId,
                                                                             BlockchainNetworkInfo.Description);
         }
 

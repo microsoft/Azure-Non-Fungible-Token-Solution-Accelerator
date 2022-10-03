@@ -30,7 +30,7 @@ az account set --subscription $subscriptionID
 Write-Host "Switched subscription to '$subscriptionID' `r`n" -ForegroundColor Yellow
 
 Write-Host "Started deploying Blockchain and NFT Service resources.....`r`n" -ForegroundColor Yellow
-$deploymentResult = az deployment sub create --template-file .\main.bicep -l $location -n 'BlockchainNFTServiceDeploy' -p adminUserName=$adminUserName adminPwd=$adminPwd
+$deploymentResult = az deployment sub create --template-file .\main.bicep -l $location -n 'BlockchainNFTServiceDeploy' -p adminUserName=$adminUserName adminPwd=$adminPwd paramLocation=$location 
 $joinedString = $deploymentResult -join "" 
 $jsonString = ConvertFrom-Json $joinedString
 

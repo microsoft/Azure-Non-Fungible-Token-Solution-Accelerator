@@ -253,7 +253,7 @@ resource virtualMachineName_resource 'Microsoft.Compute/virtualMachines@2021-07-
 
 resource virtualMachineName_datadisk1 'Microsoft.Compute/disks@2018-06-01' = {
   name: '${virtualMachineName}-datadisk1'
-  location: resourceGroup().location
+  location: location
   sku: {
     name: 'Standard_LRS'
   }

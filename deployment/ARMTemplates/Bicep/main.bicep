@@ -10,21 +10,25 @@ param adminUserName string = ''
 @secure()
 param adminPwd string = ''
 
+@description('location for Resource deployment')
+param paramLocation string = ''
+
 @description('adding prefix to every resource names')
-var resourceprefix = '${take(uniqueString(deployment().name),5)}'
+var resourceprefix = take(uniqueString(deployment().name, subscription().id),5)
 
 @description('Provide a globally unique name of your VirtualMachine')
 var virtualMachineName = 'vmnftsa${resourceprefix}'
 
 resource rgQuorum 'Microsoft.Resources/resourceGroups@2020-10-01' = {
   name: 'blockchain-${resourceprefix}'
-  location: deployment().location
+  location: paramLocation
 }
 
 module AzPublicIpDeploy 'BlockchainService/azurepublicadress.bicep' = {
   name: 'pip-${resourceprefix}'
   scope: rgQuorum
   params: {
+    location: paramLocation
     virtualMachineName: virtualMachineName
   }
 }
@@ -33,6 +37,7 @@ module AzVirtualNetworkDeploy 'BlockchainService/azurevirtualnetwork.bicep' = {
   name: 'vnet-${resourceprefix}'
   scope: rgQuorum
   params: {
+    location: paramLocation
     virtualMachineName: virtualMachineName
   }
 }
@@ -41,6 +46,7 @@ module AzVirtualMachineDeploy 'BlockchainService/azurevirtualmachine.bicep' = {
   name : 'vm-${resourceprefix}'
   scope: rgQuorum
   params:{
+    location: paramLocation
     adminUserName: adminUserName
     adminPwd:adminPwd
     virtualMachineName: virtualMachineName
@@ -61,13 +67,14 @@ module trackingID 'BlockchainService/tracetag.bicep' = {
 
 resource rgTokenService 'Microsoft.Resources/resourceGroups@2020-10-01' = {
   name: 'nftservice-${resourceprefix}'
-  location: deployment().location
+  location: paramLocation
 }
 
 module AzContainerRegistryDeploy 'NFTService/containerregistry.bicep' = {
   name: 'acr-${resourceprefix}'
   scope: rgTokenService
   params:{
+    location: paramLocation
   }
 }
 
@@ -75,6 +82,7 @@ module AzKubernetesClusterDeploy 'NFTService/azurekubernetesservice.bicep' = {
   name: 'aks-${resourceprefix}'
   scope: rgTokenService
   params:{
+    location: paramLocation
   }
 }
 
@@ -82,6 +90,7 @@ module NFTUserIdentityDeploy 'NFTService/nftuseridentity.bicep' = {
   name: 'UserIdentity-${resourceprefix}'
   scope: rgTokenService
   params: {
+    location: paramLocation
   }
 }
 
@@ -89,13 +98,17 @@ module AzCosmosDBDeploy 'NFTService/cosmosdb.bicep' = {
   name: 'cosmos-${resourceprefix}'
   scope: rgTokenService
   params: {
+    location: paramLocation
+    primaryRegion: paramLocation
   }
 }
 
 module AzureKeyVaultDeploy 'NFTService/azurekeyvault.bicep' = {
   name : 'akv-${resourceprefix}'
   scope: rgTokenService
-  params: { }
+  params: { 
+    location: paramLocation
+  }
 }
 
 module nfttrackingID 'NFTService/tracetag.bicep' = {

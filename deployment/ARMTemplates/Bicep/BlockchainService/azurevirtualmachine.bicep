@@ -46,7 +46,7 @@ resource networkSecurityGroupName_resource 'Microsoft.Network/networkSecurityGro
           sourceAddressPrefix: '*'
           destinationAddressPrefix: '*'
           access: 'Allow'
-          priority: 301
+          priority: 300
           direction: 'Inbound'
           sourcePortRanges: []
           destinationPortRanges: []
@@ -63,7 +63,7 @@ resource networkSecurityGroupName_resource 'Microsoft.Network/networkSecurityGro
           sourceAddressPrefix: '*'
           destinationAddressPrefix: '*'
           access: 'Allow'
-          priority: 300
+          priority: 301
           direction: 'Inbound'
           sourcePortRanges: []
           destinationPortRanges: [

@@ -46,7 +46,7 @@ resource networkSecurityGroupName_resource 'Microsoft.Network/networkSecurityGro
           sourceAddressPrefix: '*'
           destinationAddressPrefix: '*'
           access: 'Allow'
-          priority: 300
+          priority: 301
           direction: 'Inbound'
           sourcePortRanges: []
           destinationPortRanges: []
@@ -63,7 +63,7 @@ resource networkSecurityGroupName_resource 'Microsoft.Network/networkSecurityGro
           sourceAddressPrefix: '*'
           destinationAddressPrefix: '*'
           access: 'Allow'
-          priority: 301
+          priority: 300
           direction: 'Inbound'
           sourcePortRanges: []
           destinationPortRanges: [
@@ -163,23 +163,23 @@ resource networkSecurityGroupName_resource 'Microsoft.Network/networkSecurityGro
           destinationAddressPrefixes: []
         }
       }
-      {
-        name: 'Port_22'
-        properties: {
-          protocol: 'Tcp'
-          sourcePortRange: '*'
-          destinationPortRange: '22'
-          sourceAddressPrefix: '76.104.244.241'
-          destinationAddressPrefix: '*'
-          access: 'Allow'
-          priority: 319
-          direction: 'Inbound'
-          sourcePortRanges: []
-          destinationPortRanges: []
-          sourceAddressPrefixes: []
-          destinationAddressPrefixes: []
-        }
-      }
+      // {
+      //   name: 'Port_22'
+      //   properties: {
+      //     protocol: 'Tcp'
+      //     sourcePortRange: '*'
+      //     destinationPortRange: '22'
+      //     sourceAddressPrefix: '76.104.244.241'
+      //     destinationAddressPrefix: '*'
+      //     access: 'Allow'
+      //     priority: 319
+      //     direction: 'Inbound'
+      //     sourcePortRanges: []
+      //     destinationPortRanges: []
+      //     sourceAddressPrefixes: []
+      //     destinationAddressPrefixes: []
+      //   }
+      // }
     ]
   }
 }

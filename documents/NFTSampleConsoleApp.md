@@ -5,7 +5,7 @@
 Make sure the previous steps are completed before you run the sample console app. Previous steps will change the ***appsettings.json*** in this project to have the required values. 
 
 ## NFTSample App
-The [NFT Sample Console App](../src/Solutions.NFT.ConsoleApp) shows how to utilze the NFT API services using the [SDK](../SDK).
+The [NFT Sample Console App](../src/Solutions.NFT.ConsoleApp) shows how to utilize the NFT API services using the [SDK](../SDK).
 
 With it, you may check the configuration of the API service and the status of ERC 721 Token transactions.  
 

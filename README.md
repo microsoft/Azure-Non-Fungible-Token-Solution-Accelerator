@@ -10,7 +10,7 @@ products:
 
 Welcome to the world of decentralized applications!  
 
-This repo is for a Azure Non-fungible Token Solution Accelerator that leverages the [ERC 721 Token Standard](https://ethereum.org/en/developers/docs/standards/tokens/erc-721/) to help manage transactions on [Enterprise Blockchain Services](https://ethereum.org/en/enterprise/private-ethereum/) like [Ethereum](https://ethereum.org/en/enterprise/), [Quorum](https://consensys.net/quorum/), [QBS(Quorum Blockchain Service)](https://consensys.net/quorum/qbs/) and [Hyperledger Besu](https://www.hyperledger.org/use/besu)  
+This repo is for an Azure Non-fungible Token Solution Accelerator that leverages the [ERC 721 Token Standard](https://ethereum.org/en/developers/docs/standards/tokens/erc-721/) to help manage transactions on [Enterprise Blockchain Services](https://ethereum.org/en/enterprise/private-ethereum/) like [Ethereum](https://ethereum.org/en/enterprise/), [Quorum](https://consensys.net/quorum/), [QBS(Quorum Blockchain Service)](https://consensys.net/quorum/qbs/) and [Hyperledger Besu](https://www.hyperledger.org/use/besu)  
 
 It supports all ERC 721 Token transactions and provides several features to assist in managing Blockchain Networks, Consortium Parties, as well as private key transactions.
 
@@ -18,10 +18,10 @@ It supports all ERC 721 Token transactions and provides several features to assi
 With this Azure Non-fungible Token Solution Accelerator, you can take advantage of:  
    * HTTP REST APIs for ERC 721 Token Functions [(ERC 721 Token API)](./documents/ERC721TokenAPI.md)  
     - ERC 721 Token Smart Contract Deployment  
-    - [TTF Token Definition](https://github.com/InterWorkAlliance/TokenTaxonomyFramework) nFmbtg -(Non Fingible, Burnable, Transferrable, Delegatable) Token operations
+    - [TTF Token Definition](https://github.com/InterWorkAlliance/TokenTaxonomyFramework) nFmbtg -(Non Fungible, Burnable, Transferrable, Delegatable) Token operations
       
    * HTTP REST APIs for DApp Configurational and Operational Functions [(Token Service Management API)](./documents/ServiceManagementAPI.md)  
-    - Manage Extenal Account with Private Key  
+    - Manage External Account with Private Key  
     - Manage Blockchain RPC Transaction Node  
     - Manage Consortium Party
    
@@ -73,7 +73,7 @@ This folder contains a [PowerShell script](./deployment/NFTTokenService/deployap
 
 
 ### [04. Solution Testing](./documents/NFTSampleConsoleApp.md):
-This reposity contains a [sample console app](./documents/NFTSampleConsoleApp.md) that can be used to test the solution.
+This repository contains a [sample console app](./documents/NFTSampleConsoleApp.md) that can be used to test the solution.
 
 
 ## Folders
@@ -85,7 +85,7 @@ Refer to the following folders to learn about the solution components specific t
 - [manifests](./manifests): Kubernetes yaml file  
 - [sdk](./SDK): SDK source code to access NFT Token APIs. The Sample Application shows how to use the SDK to access the NFT Token API. Please check [NFTSampleConsoleApp](./src/Solutions.NFT.ConsoleApp)  
 - [src](./src): Contains all source code for the NFT Token Solution Accelerator  
-    - [Solutions.HTTP](./src/Solutions.HTTP) - HTTP REST API Invokation Utility with Retry Policy  
+    - [Solutions.HTTP](./src/Solutions.HTTP) - HTTP REST API Invocation Utility with Retry Policy  
     - [Solutions.NFT.ConsoleApp](./src/Solutions.NFT.ConsoleApp) - Sample Application for NFT Token APIs  
     - [Solutions.Security.Cosmos](./src/Solutions.Security.Cosmos) - Cosmos DB Connection String Retriever with Azure Managed Identity  
     - [Solutions.TokenService.API](./src/Solutions.TokenService.API) - NFT Token Service API Web Host 
@@ -156,11 +156,11 @@ If you believe you have found a security vulnerability in any Microsoft-owned re
 
 ### Reporting Security Issues
 
-**Please do not report security vulnerabilities through public GitHub issues or any other public forumn.**
+**Please do not report security vulnerabilities through public GitHub issues or any other public forum.**
 
 Instead, please report them to the Microsoft Security Response Center (MSRC) at [https://msrc.microsoft.com/create-report](https://msrc.microsoft.com/create-report).
 
-If you prefer to submit without logging in, send email to [secure@microsoft.com](mailto:secure@microsoft.com).  If possible, encrypt your message with our PGP key; please download it from the the [Microsoft Security Response Center PGP Key page](https://www.microsoft.com/en-us/msrc/pgp-key-msrc).
+If you prefer to submit without logging in, send email to [secure@microsoft.com](mailto:secure@microsoft.com).  If possible, encrypt your message with our PGP key; please download it from the [Microsoft Security Response Center PGP Key page](https://www.microsoft.com/en-us/msrc/pgp-key-msrc).
 
 You should receive a response within 24 hours. If for some reason you do not, please follow up via email to ensure we received your original message. Additional information can be found at [microsoft.com/msrc](https://www.microsoft.com/msrc).
 

@@ -17,7 +17,7 @@ If these are not available, please follow the [resource deployment](../ARMTempla
 1. Run [PowerShell 7.1](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell?view=powershell-7.1)
 2. Run Change Directory command to Navigate to the Path where deployapplications.ps1 is present
     ```console
-    PS C:\Users\>cd <driectory path>
+    PS C:\Users\>cd <directory path>
     ```
 3. Run the .\deployapplications.ps1
     ```console
